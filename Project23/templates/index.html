@@ -1,0 +1,36 @@
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <table align="center" border="2">
+        <tr>
+            <th>{{ form.number.label }}</th>
+            <th>
+                {{ form.number }}
+                <span style="color: red">
+                    {{ form.number.errors }}
+                </span>
+            </th>
+        </tr>
+            <tr>
+                    <th>{{ form.name.label }}</th>
+                <th>{{ form.name }}
+                 <span style="color: red">
+                    {{ form.name.errors }}
+                </span>
+                </th>
+            </tr>
+            <tr>
+                <th>{{ form.file_path.label }}</th>
+                <th>{{ form.file_path }}</th>
+            </tr>
+
+        <tr>
+            <th><button type="submit">Upload</button> </th>
+        </tr>
+    </table>
+</form>
+
+<a href="{% url 'v_all' %}">
+    <h2> View All Files </h2>
+</a>
